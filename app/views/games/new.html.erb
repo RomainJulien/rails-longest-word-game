@@ -1,0 +1,8 @@
+<h1>NEW</h1>
+<p><%= @letters.join(" ") %></p>
+
+<%= form_with url: score_path, method: :post, data: { turbo: false } do %>
+  <%= text_field_tag :word, nil, class: "form-control", placeholder: "Type your word here..." %>
+  <%= hidden_field_tag :letter, @letters.join(" ") %>
+  <%= submit_tag "Play", class: "btn btn-primary" %>
+<% end %>
